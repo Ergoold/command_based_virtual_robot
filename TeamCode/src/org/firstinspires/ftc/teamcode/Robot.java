@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.spikes2212.ftc.command.Scheduler;
 import org.firstinspires.ftc.teamcode.subsystems.ExampleSubsystem;
 
 /**
@@ -11,9 +12,10 @@ public class Robot {
     public static ExampleSubsystem exampleSubsystem;
 
     /**
-     * An empty constructor that initializes all of the subsystems.
+     * An empty constructor that initializes and registers all of the subsystems.
      */
     public Robot() {
         exampleSubsystem = new ExampleSubsystem();
+        Scheduler.getInstance().register(exampleSubsystem);
     }
 }

@@ -14,6 +14,6 @@ public class Robot {
      * An empty constructor that initializes all of the subsystems.
      */
     public Robot() {
-
+        exampleSubsystem = new ExampleSubsystem();
     }
 }

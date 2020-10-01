@@ -7,6 +7,7 @@ package org.firstinspires.ftc.teamcode;
  * without affecting the rest of the code.</p>
  */
 public interface RobotMap {
+
     // For example to map the left and right motors, you could define the following variables to use with your
     // drivetrain subsystem.
     // int LEFT_MOTOR = "left_motor";

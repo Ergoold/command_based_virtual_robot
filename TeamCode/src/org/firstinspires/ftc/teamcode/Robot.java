@@ -8,7 +8,7 @@ import org.firstinspires.ftc.teamcode.subsystems.ExampleSubsystem;
 public class Robot {
 
     // The robot's subsystems are defined here...
-    private ExampleSubsystem exampleSubsystem;
+    public static ExampleSubsystem exampleSubsystem;
 
     /**
      * An empty constructor that initializes all of the subsystems.

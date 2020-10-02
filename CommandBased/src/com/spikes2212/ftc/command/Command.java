@@ -17,7 +17,7 @@ public abstract class Command {
      *
      * @param subsystems the new subsystem
      */
-    public void require(Subsystem... subsystems) {
+    protected void require(Subsystem... subsystems) {
         requirements.addAll(Arrays.asList(subsystems));
     }
 
@@ -56,7 +56,7 @@ public abstract class Command {
     public void end(boolean done) {
     }
 
-    public Set<Subsystem> getRequirements() {
+    /* package */ Set<Subsystem> getRequirements() {
         return requirements;
     }
 }

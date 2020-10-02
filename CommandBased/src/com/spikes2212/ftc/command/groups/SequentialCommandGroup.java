@@ -4,8 +4,14 @@ import com.spikes2212.ftc.command.Command;
 
 import java.util.Arrays;
 
+/**
+ * A command group that runs all commands in sequence, in the order they were passed into the constructor.
+ */
 public class SequentialCommandGroup extends CommandGroup {
 
+    /**
+     * The index of the currently running command.
+     */
     private int currentCommandIndex = 0;
 
     public SequentialCommandGroup(Command... commands) {

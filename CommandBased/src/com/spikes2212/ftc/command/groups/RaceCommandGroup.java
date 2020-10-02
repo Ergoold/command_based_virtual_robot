@@ -4,6 +4,9 @@ import com.spikes2212.ftc.command.Command;
 
 import java.util.*;
 
+/**
+ * A command group that runs all commands in parallel until one of them is done, then interrupts all of the others.
+ */
 public class RaceCommandGroup extends CommandGroup {
 
     public RaceCommandGroup(Command... commands) {

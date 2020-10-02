@@ -4,21 +4,25 @@ import com.spikes2212.ftc.command.Command;
 
 import java.util.*;
 
+/**
+ * A command group that runs all commands in parallel until they are all done.
+ */
 public class ParallelCommandGroup extends CommandGroup {
 
+    /**
+     * A list that keeps track of which commands are running (via index coordination).
+     */
     private final List<Boolean> running = new ArrayList<>();
 
     public ParallelCommandGroup(Command... commands) {
         super(new ArrayList<>(new HashSet<>(Arrays.asList(commands))));
-        for (Command command : commands) {
-            running.add(true);
-        }
     }
 
     @Override
     public void init() {
         for (Command command : commands) {
             command.init();
+            running.add(true);
         }
     }
 

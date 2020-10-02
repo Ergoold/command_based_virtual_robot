@@ -22,7 +22,7 @@ public class SequentialCommandGroup extends CommandGroup {
     @Override
     public void exec() {
         if (commands.isEmpty()) return;
-        Command current = get(currentCommandIndex);
+        Command current = commands.get(currentCommandIndex);
         current.exec();
         if (current.isDone()) {
             current.end(true);
@@ -38,14 +38,10 @@ public class SequentialCommandGroup extends CommandGroup {
 
     @Override
     public void end(boolean done) {
-        if (!done && !commands.isEmpty()) get(currentCommandIndex).end(false);
+        if (!done && !commands.isEmpty()) commands.get(currentCommandIndex).end(false);
     }
 
     private void initCurrentCommand() {
-        if (currentCommandIndex < commands.size()) get(currentCommandIndex).init();
-    }
-
-    private Command get(int index) {
-        return ((List<Command>)commands).get(index);
+        if (currentCommandIndex < commands.size()) commands.get(currentCommandIndex).init();
     }
 }

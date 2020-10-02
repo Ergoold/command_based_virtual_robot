@@ -8,6 +8,9 @@ import org.firstinspires.ftc.teamcode.subsystems.ExampleSubsystem;
  */
 public class Robot {
 
+    /**
+     * Singleton instance.
+     */
     private static final Robot instance = new Robot();
 
     public static Robot getInstance() {

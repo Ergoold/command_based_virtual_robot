@@ -19,7 +19,7 @@ public class ExampleOpMode extends OpMode {
     // Use it to initialize the commands and for any other initialization code.
     @Override
     public void init() {
-        exampleCommand = new ExampleCommand(Robot.exampleSubsystem);
+        exampleCommand = new ExampleCommand(Robot.getInstance().exampleSubsystem);
         Scheduler.getInstance().schedule(exampleCommand);
     }
 

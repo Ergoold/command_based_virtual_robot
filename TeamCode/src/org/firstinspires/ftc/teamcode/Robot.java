@@ -8,8 +8,14 @@ import org.firstinspires.ftc.teamcode.subsystems.ExampleSubsystem;
  */
 public class Robot {
 
+    private static final Robot instance = new Robot();
+
+    public static Robot getInstance() {
+        return instance;
+    }
+
     // The robot's subsystems are defined here...
-    public static ExampleSubsystem exampleSubsystem;
+    public ExampleSubsystem exampleSubsystem;
 
     /**
      * An empty constructor that initializes and registers all of the subsystems.

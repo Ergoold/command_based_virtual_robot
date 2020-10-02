@@ -104,6 +104,16 @@ public class Scheduler {
     }
 
     /**
+     * Polls all {@link Button}s and schedules any new commands.
+     */
+    public void poll() {
+        for (Supplier<Command> button : buttons) {
+            Command command = button.get();
+            if (command != null) schedule(command);
+        }
+    }
+
+    /**
      * Cancels a command, causing an interrupt if it is scheduled.
      *
      * @param command the command to cancel

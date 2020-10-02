@@ -4,6 +4,7 @@ import com.spikes2212.ftc.command.Command;
 import com.spikes2212.ftc.command.Subsystem;
 
 public class InstantCommand extends Command {
+
     Runnable runnable;
 
     public InstantCommand(Runnable runnable, Subsystem... requirements) {

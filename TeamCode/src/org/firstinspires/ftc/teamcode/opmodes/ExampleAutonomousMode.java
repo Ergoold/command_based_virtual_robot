@@ -7,19 +7,22 @@ import org.firstinspires.ftc.teamcode.Robot;
 import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
 
 /**
- * An example op mode. Replace me with your own op mode.
+ * An example autonomous op mode. Replace me with your own autonomous op mode.
  */
-@Autonomous(name = "example")
-public class ExampleOpMode extends OpMode {
+@Autonomous(name = "autonomous", group = "example")
+public class ExampleAutonomousMode extends OpMode {
+
+    // The robot instance through which this op mode interacts with subsystems.
+    private final Robot robot = new Robot();
 
     // The commands used in this op mode are defined here...
-    ExampleCommand exampleCommand;
+    private ExampleCommand exampleCommand;
 
     // This function is run when the op mode begins.
     // Use it to initialize the commands and for any other initialization code.
     @Override
     public void init() {
-        exampleCommand = new ExampleCommand(Robot.getInstance().exampleSubsystem);
+        exampleCommand = new ExampleCommand(robot.exampleSubsystem);
         Scheduler.getInstance().schedule(exampleCommand);
     }
 
@@ -29,5 +32,6 @@ public class ExampleOpMode extends OpMode {
     public void loop() {
         Scheduler.getInstance().update();
         Scheduler.getInstance().run();
+        // We do not call the Scheduler's poll() method because this is an autonomous op mode.
     }
 }

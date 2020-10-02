@@ -56,7 +56,7 @@ public abstract class Command {
     public void end(boolean done) {
     }
 
-    /* package */ Set<Subsystem> getRequirements() {
+    public Set<Subsystem> getRequirements() {
         return requirements;
     }
 }

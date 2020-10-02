@@ -16,7 +16,7 @@ public class SequentialCommandGroup extends CommandGroup {
     @Override
     public void init() {
         currentCommandIndex = 0;
-        if (!commands.isEmpty()) get(0).init();
+        initCurrentCommand();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class SequentialCommandGroup extends CommandGroup {
         if (current.isDone()) {
             current.end(true);
             currentCommandIndex++;
-            if (currentCommandIndex < commands.size()) get(currentCommandIndex).init();
+            initCurrentCommand();
         }
     }
 
@@ -39,6 +39,10 @@ public class SequentialCommandGroup extends CommandGroup {
     @Override
     public void end(boolean done) {
         if (!done && !commands.isEmpty()) get(currentCommandIndex).end(false);
+    }
+
+    private void initCurrentCommand() {
+        if (currentCommandIndex < commands.size()) get(currentCommandIndex).init();
     }
 
     private Command get(int index) {

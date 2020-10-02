@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.*;
 import com.spikes2212.ftc.command.Button;
 import com.spikes2212.ftc.command.Scheduler;
+import com.spikes2212.ftc.gamepad.GamepadEx;
 import org.firstinspires.ftc.teamcode.Robot;
 import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
 
@@ -18,17 +19,18 @@ public class ExampleTeleOpMode extends OpMode {
     // The commands used in this op mode are defined here...
     private ExampleCommand exampleCommand;
 
-    // The buttons used by this op mode are defined here...
-    private Button exampleButton;
+    // The gamepads used by this op mode are defined here...
+    private GamepadEx gamepad;
 
     // This function is run when the op mode begins.
     // Use it to initialize the commands and for any other initialization code.
     @Override
     public void init() {
         exampleCommand = new ExampleCommand(robot.exampleSubsystem);
-        exampleButton = new Button(() -> gamepad1.x);
-        // Register commands with buttons, so that the operators can control the robot.
-        exampleButton.whenPressed(exampleCommand);
+
+        gamepad = new GamepadEx(gamepad1);
+
+        gamepad.getXButton().whenPressed(exampleCommand);
     }
 
     // This function is called periodically during the op mode.

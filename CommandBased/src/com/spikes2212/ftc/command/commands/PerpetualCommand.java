@@ -3,9 +3,12 @@ package com.spikes2212.ftc.command.commands;
 import com.spikes2212.ftc.command.Command;
 import com.spikes2212.ftc.command.Subsystem;
 
+/**
+ * A command that runs another command perpetually.
+ */
 public class PerpetualCommand extends Command {
 
-    private Command command;
+    private final Command command;
 
     public PerpetualCommand(Command command) {
         this.command = command;

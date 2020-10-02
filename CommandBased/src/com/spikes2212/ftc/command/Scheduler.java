@@ -1,6 +1,7 @@
 package com.spikes2212.ftc.command;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 /**
  * A singleton mediator that handles all of the interactions between {@link Command}s and {@link Subsystem}s.
@@ -27,6 +28,11 @@ public class Scheduler {
      * <p>Also used as a set of currently registered subsystems.</p>
      */
     private final Map<Subsystem, Command> requirements = new HashMap<>();
+
+    /**
+     * The set of currently-registered buttons that will be polled every iteration.
+     */
+    private final Set<Supplier<Command>> buttons = new HashSet<>();
 
     /**
      * Private constructor so that only one instance (the singleton) is possible.
@@ -67,6 +73,15 @@ public class Scheduler {
     }
 
     /**
+     * Adds a new button that will be polled every iteration.
+     *
+     * @param button the button to add
+     */
+    /* package-private */ void addButton(Supplier<Command> button) {
+        buttons.add(button);
+    }
+
+    /**
      * Updates all registered subsystem.
      */
     public void update() {
@@ -103,7 +118,7 @@ public class Scheduler {
      * <p>Automatically removes the command from all of the subsystems which it requires.</p>
      *
      * @param command the command to finish
-     * @param done {@code true} when the command is done, and {@code false} when it was interrupted or canceled
+     * @param done    {@code true} when the command is done, and {@code false} when it was interrupted or canceled
      */
     private void finish(Command command, boolean done) {
         command.end(done);

@@ -12,7 +12,7 @@ public class PerpetualCommand extends Command {
 
     public PerpetualCommand(Command command) {
         this.command = command;
-        require(command.getRequirements().toArray(new Subsystem[0]));
+        require(command.getRequirements());
     }
 
     @Override

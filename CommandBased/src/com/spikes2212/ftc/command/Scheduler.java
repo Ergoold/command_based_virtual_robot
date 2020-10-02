@@ -77,7 +77,7 @@ public class Scheduler {
      *
      * @param button the button to add
      */
-    /* package-private */ void addButton(Supplier<Command> button) {
+    /* package */ void addButton(Supplier<Command> button) {
         buttons.add(button);
     }
 

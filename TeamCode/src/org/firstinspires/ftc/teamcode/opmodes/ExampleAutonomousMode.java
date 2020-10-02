@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
 public class ExampleAutonomousMode extends OpMode {
 
     // The robot instance through which this op mode interacts with subsystems.
-    private final Robot robot = new Robot();
+    private final Robot robot = new Robot(hardwareMap);
 
     // The commands used in this op mode are defined here...
     private ExampleCommand exampleCommand;

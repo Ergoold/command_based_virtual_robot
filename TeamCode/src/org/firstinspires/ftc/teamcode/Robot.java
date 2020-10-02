@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.spikes2212.ftc.command.Scheduler;
 import org.firstinspires.ftc.teamcode.subsystems.ExampleSubsystem;
 
@@ -13,8 +14,10 @@ public class Robot {
 
     /**
      * An empty constructor that initializes and registers all of the subsystems.
+     *
+     * @param hardwareMap the robot's hardware map, used to construct the hardware
      */
-    public Robot() {
+    public Robot(HardwareMap hardwareMap) {
         exampleSubsystem = new ExampleSubsystem();
         Scheduler.getInstance().register(exampleSubsystem);
     }

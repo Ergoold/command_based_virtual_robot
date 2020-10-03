@@ -46,6 +46,9 @@ public class SequentialCommandGroup extends CommandGroup {
         if (!done && !commands.isEmpty()) commands.get(currentCommandIndex).end(false);
     }
 
+    /**
+     * Calls the {@link Command#init} function of the command at the index {@link #currentCommandIndex} if it exists.
+     */
     private void initCurrentCommand() {
         if (currentCommandIndex < commands.size()) commands.get(currentCommandIndex).init();
     }

@@ -10,6 +10,6 @@ public interface RobotMap {
 
     // For example to map the left and right motors, you could define the following variables to use with your
     // drivetrain subsystem.
-    // int LEFT_MOTOR = "left_motor";
-    // int RIGHT_MOTOR = "right_motor";
+    // String LEFT_MOTOR = "left_motor";
+    // String RIGHT_MOTOR = "right_motor";
 }

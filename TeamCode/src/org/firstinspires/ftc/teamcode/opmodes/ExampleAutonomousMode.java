@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
 public class ExampleAutonomousMode extends OpMode {
 
     // The robot instance through which this op mode interacts with subsystems.
-    private final Robot robot = new Robot(hardwareMap);
+    private Robot robot;
 
     // The commands used in this op mode are defined here...
     private ExampleCommand exampleCommand;
@@ -22,6 +22,8 @@ public class ExampleAutonomousMode extends OpMode {
     // Use it to initialize the commands and for any other initialization code.
     @Override
     public void init() {
+        robot = new Robot(hardwareMap);
+
         exampleCommand = new ExampleCommand(robot.exampleSubsystem);
         Scheduler.getInstance().schedule(exampleCommand);
     }

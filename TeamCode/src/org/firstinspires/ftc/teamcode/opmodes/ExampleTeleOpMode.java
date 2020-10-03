@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode.opmodes;
 
-import com.qualcomm.robotcore.eventloop.opmode.*;
-import com.spikes2212.ftc.command.Button;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.spikes2212.ftc.command.Scheduler;
 import com.spikes2212.ftc.gamepad.GamepadEx;
 import org.firstinspires.ftc.teamcode.Robot;

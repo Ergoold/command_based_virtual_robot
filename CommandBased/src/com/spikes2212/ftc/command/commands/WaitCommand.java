@@ -14,12 +14,12 @@ public class WaitCommand extends Command {
     private final ElapsedTime elapsedTime;
 
     /**
-     * The amount of time after which this command ends, in milliseconds.
+     * The amount of time after which this command ends, in seconds.
      */
-    private final long millis;
+    private final double seconds;
 
-    public WaitCommand(long millis) {
-        this.millis = millis;
+    public WaitCommand(double seconds) {
+        this.seconds = seconds;
         this.elapsedTime = new ElapsedTime();
     }
 
@@ -30,6 +30,6 @@ public class WaitCommand extends Command {
 
     @Override
     public boolean isDone() {
-        return elapsedTime.milliseconds() >= millis;
+        return elapsedTime.seconds() >= seconds;
     }
 }

@@ -35,6 +35,13 @@ public class RaceCommandGroup extends CommandGroup {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * <p>If this function was called as a result of {@link #isDone} returning {@code true}, it will call the
+     * {@link Command#isDone} function again for each command in this group individually, to determine whether it should
+     * be interrupted.</p>
+     */
     @Override
     public void end(boolean done) {
         for (Command command : commands) {

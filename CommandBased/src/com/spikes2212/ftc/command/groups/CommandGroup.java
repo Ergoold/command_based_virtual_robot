@@ -12,7 +12,7 @@ public abstract class CommandGroup extends Command {
     /**
      * The commands this command group coordinates.
      */
-    protected List<Command> commands;
+    protected final List<Command> commands;
 
     public CommandGroup(List<Command> commands) {
         this.commands = commands;

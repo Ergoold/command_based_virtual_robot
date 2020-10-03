@@ -1,7 +1,6 @@
 package com.spikes2212.ftc.command.commands;
 
 import com.spikes2212.ftc.command.Command;
-import com.spikes2212.ftc.command.Subsystem;
 
 /**
  * A command that runs another command perpetually.

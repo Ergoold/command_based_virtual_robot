@@ -14,7 +14,7 @@ import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
 public class ExampleTeleOpMode extends OpMode {
 
     // The robot instance through which this op mode interacts with subsystems.
-    private final Robot robot = new Robot(hardwareMap);
+    private Robot robot;
 
     // The commands used in this op mode are defined here...
     private ExampleCommand exampleCommand;
@@ -26,9 +26,11 @@ public class ExampleTeleOpMode extends OpMode {
     // Use it to initialize the commands and for any other initialization code.
     @Override
     public void init() {
-        exampleCommand = new ExampleCommand(robot.exampleSubsystem);
+        robot = new Robot(hardwareMap);
 
         gamepad = new GamepadEx(gamepad1);
+
+        exampleCommand = new ExampleCommand(robot.exampleSubsystem);
 
         gamepad.getXButton().whenPressed(exampleCommand);
     }

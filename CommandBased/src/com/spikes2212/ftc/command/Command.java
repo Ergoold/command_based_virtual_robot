@@ -18,7 +18,16 @@ public abstract class Command {
      * @param subsystems the new subsystem
      */
     protected void require(Subsystem... subsystems) {
-        requirements.addAll(Arrays.asList(subsystems));
+        require(Arrays.asList(subsystems));
+    }
+
+    /**
+     * Adds subsystems to the requirements set.
+     *
+     * @param subsystems the new subsystem
+     */
+    protected void require(Collection<Subsystem> subsystems) {
+        requirements.addAll(subsystems);
     }
 
     /**
@@ -56,7 +65,7 @@ public abstract class Command {
     public void end(boolean done) {
     }
 
-    /* package */ Set<Subsystem> getRequirements() {
+    public Set<Subsystem> getRequirements() {
         return requirements;
     }
 }

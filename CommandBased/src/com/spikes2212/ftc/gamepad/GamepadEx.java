@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.spikes2212.ftc.command.Button;
 
 /**
- * A gamepad that integrates with the command framework.
+ * A gamepad with additional features that integrates with the command framework.
  */
 public class GamepadEx {
 

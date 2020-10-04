@@ -11,10 +11,14 @@ public class GamepadEx {
     /**
      * The gamepad object.
      */
-    private Gamepad gamepad;
+    private final Gamepad gamepad;
 
     public GamepadEx(Gamepad gamepad) {
         this.gamepad = gamepad;
+    }
+
+    public void setDeadzone(float deadzone) {
+        gamepad.setJoystickDeadzone(deadzone);
     }
 
     public boolean isXPressed() {

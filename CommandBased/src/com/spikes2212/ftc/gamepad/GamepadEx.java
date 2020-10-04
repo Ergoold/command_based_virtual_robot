@@ -13,12 +13,21 @@ public class GamepadEx {
      */
     private final Gamepad gamepad;
 
+    /**
+     * Whether or not inputs are squared.
+     */
+    private boolean squareInputs = true;
+
     public GamepadEx(Gamepad gamepad) {
         this.gamepad = gamepad;
     }
 
     public void setDeadzone(float deadzone) {
         gamepad.setJoystickDeadzone(deadzone);
+    }
+
+    public void setSquareInputs(boolean squareInputs) {
+        this.squareInputs = squareInputs;
     }
 
     public boolean isXPressed() {
@@ -82,27 +91,27 @@ public class GamepadEx {
     }
 
     public double getLeftTrigger() {
-        return gamepad.left_trigger;
+        return squareInputs ? squareInput(gamepad.left_trigger) : gamepad.left_trigger;
     }
 
     public double getRightTrigger() {
-        return gamepad.right_trigger;
+        return squareInputs ? squareInput(gamepad.right_trigger) : gamepad.right_trigger;
     }
 
     public double getLeftX() {
-        return gamepad.left_stick_x;
+        return squareInputs ? squareInput(gamepad.left_stick_x) : gamepad.left_stick_x;
     }
 
     public double getLeftY() {
-        return gamepad.left_stick_y;
+        return squareInputs ? squareInput(gamepad.left_stick_y) : gamepad.left_stick_y;
     }
 
     public double getRightX() {
-        return gamepad.right_stick_x;
+        return squareInputs ? squareInput(gamepad.right_stick_x) : gamepad.right_stick_x;
     }
 
     public double getRightY() {
-        return gamepad.right_stick_y;
+        return squareInputs ? squareInput(gamepad.right_stick_y) : gamepad.right_stick_y;
     }
 
     public Button getXButton() {
@@ -163,5 +172,15 @@ public class GamepadEx {
 
     public Button getRightStickButton() {
         return new Button(this::isRightStickPressed);
+    }
+
+    /**
+     * Squares an input without changing its sign.
+     *
+     * @param input the controller input
+     * @return the squared input
+     */
+    private double squareInput(double input) {
+        return Math.abs(input) * input;
     }
 }

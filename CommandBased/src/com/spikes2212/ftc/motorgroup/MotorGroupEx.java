@@ -134,7 +134,7 @@ public class MotorGroupEx implements DcMotorEx {
 
     @Override
     public boolean isOverCurrent() {
-        return motors[0].isMotorEnabled();
+        return motors[0].isOverCurrent();
     }
 
     @Override
@@ -168,7 +168,7 @@ public class MotorGroupEx implements DcMotorEx {
 
     @Override
     public boolean isBusy() {
-        return motors[0].isMotorEnabled();
+        return motors[0].isBusy();
     }
 
     @Override

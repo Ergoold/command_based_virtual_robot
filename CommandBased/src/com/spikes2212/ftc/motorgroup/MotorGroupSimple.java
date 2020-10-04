@@ -3,7 +3,7 @@ package com.spikes2212.ftc.motorgroup;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 /**
- * A group of DcMotorSimple objects that operate as one motor.
+ * A group of DcMotorSimple objects that operate as one DcMotorSimple.
  */
 public class MotorGroupSimple implements DcMotorSimple {
 

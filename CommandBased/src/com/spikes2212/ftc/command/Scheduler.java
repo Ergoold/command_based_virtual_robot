@@ -123,6 +123,18 @@ public class Scheduler {
     }
 
     /**
+     * Un-registers all subsystems, un-schedules all commands and removes all the buttons from the scheduler.
+     *
+     * <p>If this function is not called at the end of an op mode, starting another one will cause a
+     * NullPointerException.</p>
+     */
+    public void clear() {
+        scheduledCommands.clear();
+        requirements.clear();
+        buttons.clear();
+    }
+
+    /**
      * Finishes the command.
      *
      * <p>Automatically removes the command from all of the subsystems which it requires.</p>

@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.spikes2212.ftc.command.CommandOpMode;
 import com.spikes2212.ftc.command.Scheduler;
 import org.firstinspires.ftc.teamcode.Robot;
 import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
@@ -10,7 +10,7 @@ import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
  * An example autonomous op mode. Replace me with your own autonomous op mode.
  */
 @Autonomous(name = "autonomous", group = "example")
-public class ExampleAutonomousMode extends OpMode {
+public class ExampleAutonomousMode extends CommandOpMode {
 
     // The robot instance through which this op mode interacts with subsystems.
     private Robot robot;
@@ -26,14 +26,5 @@ public class ExampleAutonomousMode extends OpMode {
 
         exampleCommand = new ExampleCommand(robot.exampleSubsystem);
         Scheduler.getInstance().schedule(exampleCommand);
-    }
-
-    // This function is called periodically during the op mode.
-    // Op modes should not perform much logic, so this function should usually just call the Scheduler.
-    @Override
-    public void loop() {
-        Scheduler.getInstance().update();
-        Scheduler.getInstance().run();
-        // We do not call the Scheduler's poll() method because this is an autonomous op mode.
     }
 }

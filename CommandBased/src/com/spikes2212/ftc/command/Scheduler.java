@@ -84,7 +84,7 @@ public class Scheduler {
     /**
      * Updates all registered subsystem.
      */
-    public void update() {
+    /* package */ void update() {
         for (Subsystem subsystem : requirements.keySet()) {
             subsystem.update();
             requirements.putIfAbsent(subsystem, subsystem.getDefaultCommand());
@@ -94,7 +94,7 @@ public class Scheduler {
     /**
      * Runs or ends all scheduled commands as needed.
      */
-    public void run() {
+    /* package */ void run() {
         for (Command command : scheduledCommands) {
             command.exec();
             if (command.isDone()) {
@@ -106,7 +106,7 @@ public class Scheduler {
     /**
      * Polls all {@link Button}s and schedules any new commands.
      */
-    public void poll() {
+    /* package */ void poll() {
         for (Supplier<Command> button : buttons) {
             Command command = button.get();
             if (command != null) schedule(command);
@@ -136,5 +136,14 @@ public class Scheduler {
             requirements.put(requirement, null);
         }
         scheduledCommands.remove(command);
+    }
+
+    /**
+     * Un-registers all subsystems, un-schedules all commands and removes all the buttons from the scheduler.
+     */
+    /* package */ void clear() {
+        scheduledCommands.clear();
+        requirements.clear();
+        buttons.clear();
     }
 }

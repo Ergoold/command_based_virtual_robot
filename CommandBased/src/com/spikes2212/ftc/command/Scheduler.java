@@ -123,15 +123,6 @@ public class Scheduler {
     }
 
     /**
-     * Un-registers all subsystems, un-schedules all commands and removes all the buttons from the scheduler.
-     */
-    /* package */ void clear() {
-        scheduledCommands.clear();
-        requirements.clear();
-        buttons.clear();
-    }
-
-    /**
      * Finishes the command.
      *
      * <p>Automatically removes the command from all of the subsystems which it requires.</p>
@@ -145,5 +136,14 @@ public class Scheduler {
             requirements.put(requirement, null);
         }
         scheduledCommands.remove(command);
+    }
+
+    /**
+     * Un-registers all subsystems, un-schedules all commands and removes all the buttons from the scheduler.
+     */
+    /* package */ void clear() {
+        scheduledCommands.clear();
+        requirements.clear();
+        buttons.clear();
     }
 }

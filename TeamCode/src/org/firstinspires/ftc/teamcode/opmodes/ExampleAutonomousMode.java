@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.spikes2212.ftc.command.CommandOpMode;
 import com.spikes2212.ftc.command.Scheduler;
 import org.firstinspires.ftc.teamcode.Robot;

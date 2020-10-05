@@ -12,8 +12,7 @@ public abstract class CommandOpMode extends OpMode {
     /**
      * {@inheritDoc}
      *
-     * <p>When overriding this method, make sure to call {@code super.loop()} or call the {@link Scheduler#update},
-     * {@link Scheduler#run} and {@link Scheduler#poll} functions yourself. The command framework will not work
+     * <p>When overriding this method, make sure to call {@code super.loop()}. The command framework will not work
      * otherwise.</p>
      */
     @Override
@@ -26,8 +25,8 @@ public abstract class CommandOpMode extends OpMode {
     /**
      * {@inheritDoc}
      *
-     * <p>When overriding this method, make sure to call {@code super.stop()} or call the {@link Scheduler#clear}
-     * function yourself. The command framework may cause exceptions otherwise.</p>
+     * <p>When overriding this method, make sure to call {@code super.stop()}. The command framework may cause
+     * exceptions otherwise.</p>
      */
     @Override
     public void stop() {

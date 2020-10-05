@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.spikes2212.ftc.command.CommandOpMode;
 import com.spikes2212.ftc.command.Scheduler;
 import com.spikes2212.ftc.gamepad.GamepadEx;
 import org.firstinspires.ftc.teamcode.Robot;
@@ -11,7 +12,7 @@ import org.firstinspires.ftc.teamcode.commands.ExampleCommand;
  * An example teleop op mode. Replace me with your own teleop op mode.
  */
 @TeleOp(name = "teleop", group = "example")
-public class ExampleTeleOpMode extends OpMode {
+public class ExampleTeleOpMode extends CommandOpMode {
 
     // The robot instance through which this op mode interacts with subsystems.
     private Robot robot;
@@ -33,14 +34,5 @@ public class ExampleTeleOpMode extends OpMode {
         exampleCommand = new ExampleCommand(robot.exampleSubsystem);
 
         gamepad.getXButton().whenPressed(exampleCommand);
-    }
-
-    // This function is called periodically during the op mode.
-    // Op modes should not perform much logic, so this function should usually just call the Scheduler.
-    @Override
-    public void loop() {
-        Scheduler.getInstance().update();
-        Scheduler.getInstance().run();
-        Scheduler.getInstance().poll();
     }
 }

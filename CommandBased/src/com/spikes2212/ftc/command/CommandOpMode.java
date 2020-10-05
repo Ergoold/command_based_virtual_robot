@@ -5,8 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 /**
  * A command based op mode.
  *
- * <p>Automatically calls the scheduler functions {@link Scheduler#update}, {@link Scheduler#run},
- * {@link Scheduler#poll} and {@link Scheduler#clear} at the appropriate times.</p>
+ * <p>The command framework will not work correctly when using any other op mode base class.</p>
  */
 public abstract class CommandOpMode extends OpMode {
 

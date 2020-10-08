@@ -34,6 +34,15 @@ public class DrivetrainBase implements Subsystem {
     }
 
     /**
+     * Stops this drivetrain completely.
+     */
+    public void stop() {
+        for (DcMotorSimple motor : motors) {
+            motor.setPower(0);
+        }
+    }
+
+    /**
      * Finds the maximum of an array of motor speeds.
      *
      * @param speeds the speeds

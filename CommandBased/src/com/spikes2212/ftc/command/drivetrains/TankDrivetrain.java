@@ -5,9 +5,9 @@ import com.spikes2212.ftc.motorgroup.*;
 
 /**
  * A tank drivetrain, also known as a differential drive, skid-steer or west coast.
- * <p>
- * This class takes one DcMotorSimple per side. For drivetrains with more motors on each side, use a
- * {@link MotorGroupSimple}, {@link MotorGroup} or {@link MotorGroupEx}.
+ *
+ * <p>This class takes one DcMotorSimple per side. For drivetrains with more motors on each side, use a
+ * {@link MotorGroupSimple}, {@link MotorGroup} or {@link MotorGroupEx}.</p>
  */
 public class TankDrivetrain extends DrivetrainBase {
 

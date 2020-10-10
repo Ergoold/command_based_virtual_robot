@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.spikes2212.ftc.motorgroup.*;
 
 /**
- * A tank drivetrain, also known as a differential drive, skid-steer or west coast.
+ * A tank drivetrain, also known as differential drive, skid-steer or west coast.
  *
  * <p>This class takes one DcMotorSimple per side. For drivetrains with more motors on each side, use a
  * {@link MotorGroupSimple}, {@link MotorGroup} or {@link MotorGroupEx}.</p>
@@ -17,6 +17,8 @@ public class TankDrivetrain extends DrivetrainBase {
 
     /**
      * Drives this TankDrivetrain with the given speeds for the left and the right motors.
+     *
+     * <p>Prefer using this method instead of {@link #drive}, for better static analysis.</p>
      *
      * @param leftSpeed  the left side speed
      * @param rightSpeed the right side speed
@@ -37,6 +39,8 @@ public class TankDrivetrain extends DrivetrainBase {
 
     /**
      * Drives this TankDrivetrain with the given forward speed and path curvature.
+     *
+     * <p>This method allows handling this drivetrain like a car.</p>
      *
      * @param speed     the forward speed
      * @param curvature the path curvature

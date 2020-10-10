@@ -24,7 +24,11 @@ public class DrivetrainBase implements Subsystem {
      *
      * <p>The order of the speeds is the same as the order of the motors, as given in the constructor.</p>
      *
-     * @param speeds an variable-length argument with the speed each motor should be driven with
+     * <p>If {@code speeds} is shorter than {@code motors}, some motors are simply not assigned any speeds. If it is
+     * longer, an unchecked {@code ArrayIndexOutOfBoundsException} is thrown.</p>
+     *
+     * @param speeds a variable-length argument with the speed each motor should be driven with
+     * @throws ArrayIndexOutOfBoundsException if given more speeds than this drivetrain has motors.
      */
     public void drive(double... speeds) {
         double factor = Math.max(max(speeds), 1);
@@ -35,6 +39,8 @@ public class DrivetrainBase implements Subsystem {
 
     /**
      * Stops this drivetrain completely.
+     *
+     * <p>Calling this method results is the same as calling {@link #drive} with only zeros, but is more efficient.</p>
      */
     public void stop() {
         for (DcMotorSimple motor : motors) {

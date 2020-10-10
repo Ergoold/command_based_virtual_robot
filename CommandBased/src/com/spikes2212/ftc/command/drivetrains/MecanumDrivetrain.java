@@ -31,7 +31,8 @@ public class MecanumDrivetrain extends DrivetrainBase {
     }
 
     /**
-     * Drives this MecanumDrivetrain with the given speeds along all axis while rotating at the given rotation rate.
+     * Drives this MecanumDrivetrain with the given speeds along all axis relative to its forward direction while
+     * rotating at the given rotation rate.
      *
      * @param xSpeed   the speed along the x axis
      * @param ySpeed   the speed along the x axis

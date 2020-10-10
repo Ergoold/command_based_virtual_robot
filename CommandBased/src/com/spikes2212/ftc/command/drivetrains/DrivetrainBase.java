@@ -24,15 +24,12 @@ public class DrivetrainBase implements Subsystem {
      *
      * <p>The order of the speeds is the same as the order of the motors, as given in the constructor.</p>
      *
-     * <p>If {@code speeds} is shorter than {@code motors}, some motors are simply not assigned any speeds. If it is
-     * longer, an unchecked {@code ArrayIndexOutOfBoundsException} is thrown.</p>
-     *
      * @param speeds a variable-length argument with the speed each motor should be driven with
-     * @throws ArrayIndexOutOfBoundsException if given more speeds than this drivetrain has motors.
+     * @throws ArrayIndexOutOfBoundsException if given more or less speeds than this drivetrain has motors
      */
     public void drive(double... speeds) {
         double factor = Math.max(max(speeds), 1);
-        for (int i = 0; i < speeds.length; i++) {
+        for (int i = 0; i < motors.length; i++) {
             motors[i].setPower(speeds[i] / factor);
         }
     }
